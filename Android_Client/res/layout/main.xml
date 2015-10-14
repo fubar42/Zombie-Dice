@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+                android:background="@drawable/zombie_dice">
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/play"
+            android:id="@+id/btnPlay"
+            android:enabled="true"
+            android:minWidth="128dp"
+            android:minHeight="64dp"
+            android:clickable="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffff002d"
+            android:textStyle="bold|italic"
+            android:visibility="visible"
+            android:typeface="monospace"
+            android:textSize="36dp"
+            android:shadowColor="#ff101010"
+            android:onClick="Play"/>
+</RelativeLayout>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android_Client</string>
+    <string name="play">Play!</string>
+    <string name="zombie">zombie</string>
+    <string name="find">Find Game!</string>
+    <string name="roll">Roll</string>
+    <string name="hold">Hold</string>
+    <string name="image_a">die1</string>
+    <string name="image_b">die2</string>
+    <string name="image_c">die3</string>
+</resources>

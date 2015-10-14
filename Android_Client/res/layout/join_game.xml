@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff000000">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txtViewPrompt"
+            android:textSize="24sp"
+            android:layout_marginBottom="32dp"
+            android:layout_alignBottom="@+id/zombie"
+            android:layout_toRightOf="@+id/zombie"
+            android:textColor="#ffff1729"
+            android:background="#ff000000"
+            android:text="Enter Your Name"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/find"
+            android:id="@+id/btnFindGame"
+            android:layout_alignParentBottom="true"
+            android:textStyle="bold|italic"
+            android:textColor="#ffff0018"
+            android:textSize="36sp"
+            android:minWidth="196dp"
+            android:minHeight="72dp"
+            android:background="#ff252525"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:onClick="FindGame"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/zombie"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/zombie"
+            android:maxWidth="96dp"
+            android:maxHeight="96dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/zombie"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextName"
+                android:textStyle="bold|italic"
+                android:hint="Name"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:width="164dp"
+                android:textSize="36dp"
+                android:singleLine="true"
+                android:inputType="text"/>
+</RelativeLayout>

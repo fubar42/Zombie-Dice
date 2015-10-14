@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ff000000">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/zombie"
+            android:src="@drawable/zombie"
+            android:maxWidth="96dp"
+            android:maxHeight="96dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/zombie"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="New Game"
+            android:id="@+id/textView"
+            android:layout_alignBottom="@+id/zombie"
+            android:layout_toRightOf="@+id/zombie"
+            android:layout_marginBottom="31dp"
+            android:textSize="24sp"
+            android:textColor="#ffff162e"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/roll"
+                android:id="@+id/btnRoll"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:onClick="roll"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hold"
+                android:id="@+id/btnHold"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageA"
+                android:adjustViewBounds="true"
+                android:minHeight="96dp"
+                android:minWidth="96dp"
+                android:layout_above="@+id/imageB"
+                android:layout_toLeftOf="@+id/imageB"
+                android:background="#ff000000"
+                android:maxHeight="96dp"
+                android:maxWidth="96dp"
+                android:visibility="visible"
+                android:contentDescription="@string/image_a"
+                android:src="@drawable/green_brain"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageB"
+                android:adjustViewBounds="true"
+                android:minHeight="96dp"
+                android:minWidth="96dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="#ff000000"
+                android:maxWidth="96dp"
+                android:maxHeight="96dp"
+                android:visibility="visible"
+                android:contentDescription="@string/image_b"
+                android:src="@drawable/green_runner"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageC"
+                android:adjustViewBounds="true"
+                android:minHeight="96dp"
+                android:minWidth="96dp"
+                android:background="#ff000000"
+                android:layout_below="@+id/imageB"
+                android:layout_toRightOf="@+id/imageB"
+                android:maxHeight="96dp"
+                android:maxWidth="96dp"
+                android:visibility="visible"
+                android:contentDescription="@string/image_c"
+                android:src="@drawable/red_runner"/>
+
+</RelativeLayout>
