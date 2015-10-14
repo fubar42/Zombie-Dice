@@ -17,6 +17,8 @@ public class Game extends Activity {
     private ArrayList<Die> dice;
     private ArrayList<Die> selectedDice;
 
+    private int numberOfBrains;
+
     private ImageView imgA;
     private ImageView imgB;
     private ImageView imgC;
@@ -29,15 +31,51 @@ public class Game extends Activity {
         imgB = (ImageView) findViewById(R.id.imageB);
         imgC = (ImageView) findViewById(R.id.imageC);
 
-        setRoll();
+        numberOfBrains = 0;
+        initiateDice();
     }
 
     public void roll(View view) {
         throwDice();
+        evaluateThrownDice();
+        rearrangeDice();
+
+        if (selectedDice.size() == 0) {
+            selectDiceWithoutRunners();
+        } else {
+            selectDiceWithRunners();
+        }
     }
-    private void setRoll(){
+
+    private void initiateDice() {
         setDice();
-        selectDice();
+        selectDiceWithoutRunners();
+    }
+
+    private void evaluateThrownDice() {
+        for (Die die : selectedDice) {
+            if (die.getSelectedFace().getType() == "brain") {
+                numberOfBrains++;
+            }
+        }
+    }
+
+    private void rearrangeDice() {
+        ArrayList<Die> runners = new ArrayList<Die>();
+        for (Die die : selectedDice) {
+            if (die.getSelectedFace().getType() == "runner") {
+                runners.add(die);
+            } else {
+                dice.add(die);
+            }
+        }
+        selectedDice = runners;
+    }
+
+    private void selectDiceWithRunners() {
+        for (int x = selectedDice.size(); x < 3; x++) {
+            selectedDice.add(getRandomDie(12 - x));
+        }
     }
 
     private void setDice() {
@@ -99,7 +137,7 @@ public class Game extends Activity {
         }
     }
 
-    private void selectDice() {
+    private void selectDiceWithoutRunners() {
         selectedDice = new ArrayList<Die>();
         for (int x = 0; x < 3; x++) {
             selectedDice.add(getRandomDie(12 - x));
@@ -107,17 +145,17 @@ public class Game extends Activity {
     }
 
     private void throwDice() {
-        Die die = selectedDice.remove(0);
+        Die die = selectedDice.get(0);
         die.selectRandomFace();
-        String fileA = die.getColour() + "_" + die.getSelectedFace().getType() + ".jpg";
+        String fileA = die.getColour() + "_" + die.getSelectedFace().getType();
 
-        die = selectedDice.remove(0);
+        die = selectedDice.get(1);
         die.selectRandomFace();
-        String fileB = die.getColour() + "_" + die.getSelectedFace().getType() + ".jpg";
+        String fileB = die.getColour() + "_" + die.getSelectedFace().getType();
 
-        die = selectedDice.remove(0);
+        die = selectedDice.get(2);
         die.selectRandomFace();
-        String fileC = die.getColour() + "_" + die.getSelectedFace().getType() + ".jpg";
+        String fileC = die.getColour() + "_" + die.getSelectedFace().getType();
 
         Resources res = getResources();
         int resID = res.getIdentifier(fileA, "drawable", getPackageName());
