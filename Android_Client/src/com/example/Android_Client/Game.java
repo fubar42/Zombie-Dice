@@ -17,8 +17,6 @@ public class Game extends Activity {
     private ArrayList<Die> dice;
     private ArrayList<Die> selectedDice;
 
-    private int numberOfBrains;
-
     private ImageView imgA;
     private ImageView imgB;
     private ImageView imgC;
@@ -30,8 +28,6 @@ public class Game extends Activity {
         imgA = (ImageView) findViewById(R.id.imageA);
         imgB = (ImageView) findViewById(R.id.imageB);
         imgC = (ImageView) findViewById(R.id.imageC);
-
-        numberOfBrains = 0;
         initiateDice();
     }
 
@@ -53,11 +49,11 @@ public class Game extends Activity {
     }
 
     private void evaluateThrownDice() {
-        for (Die die : selectedDice) {
-            if (die.getSelectedFace().getType() == "brain") {
-                numberOfBrains++;
-            }
-        }
+
+    }
+
+    private void sendMessageToServer(){
+
     }
 
     private void rearrangeDice() {
